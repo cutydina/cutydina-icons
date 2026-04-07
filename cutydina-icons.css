@@ -1,0 +1,46 @@
+/* Cutydina Icons Library v1.0 
+   Repositorio: https://github.com/cutydina/cutydina-icons
+*/
+
+/* 1. Estilo base para el contenedor del icono */
+.cd-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    vertical-align: middle;
+    fill: currentColor; /* Permite que el icono tome el color del texto */
+}
+
+/* 2. Definición de cada icono como máscara (Formato Clase) */
+/* Esto permite usarlos como <i class="cd-heart"></i> o similar */
+
+.cd-arrowleft { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-arrowleft'); }
+.cd-buymeacofee { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-buymeacofee'); }
+.cd-calendar { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-calendar'); }
+.cd-copyright { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-copyright'); }
+.cd-danger { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-danger'); }
+.cd-gift { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-gift'); }
+.cd-heart { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-heart'); }
+.cd-heartsmile { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-heartsmile'); }
+.cd-search { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-search'); }
+
+/* Iconos de Redes Sociales */
+.cd-amazon { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-amazon'); }
+.cd-bluesky { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-bluesky'); }
+.cd-cara { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-cara'); }
+.cd-codepen { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-codepen'); }
+.cd-discord { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-discord'); }
+.cd-email { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-email'); }
+.cd-github { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-github'); }
+.cd-googleplay { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-googleplay'); }
+.cd-linkedin { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-linkedin'); }
+.cd-patreon { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-patreon'); }
+.cd-paypal { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-paypal'); }
+.cd-pinterest { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-pinterest'); }
+.cd-reddit { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-reddit'); }
+.cd-telegram { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-telegram'); }
+.cd-tiktok { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-tiktok'); }
+.cd-vgen { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-vgen'); }
+.cd-webtoon { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-webtoon'); }
+.cd-youtube { content: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-youtube'); }
