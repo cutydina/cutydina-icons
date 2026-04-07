@@ -1,4 +1,3 @@
-/* Colores de marca y variables globales */
 :root {
     --cd-primary: #e91e63;
     --cd-hover-bg: #fff0f5;
@@ -41,7 +40,6 @@ body {
     color: var(--cd-primary);
 }
 
-/* Tipografía del nombre */
 .icon-name {
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     font-size: 0.75rem;
@@ -49,7 +47,6 @@ body {
     font-weight: 500;
 }
 
-/* Ajuste para el buscador */
 #iconSearch {
     border-radius: 30px;
     padding-left: 20px;
