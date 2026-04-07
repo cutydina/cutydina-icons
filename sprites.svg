@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<svg xmlns="http://www.w3.org/2000/svg">
 
 
-  <symbol id="icon_arrowleft" viewBox="0 0 16 16">
+<symbol id="icon_arrowleft" viewBox="0 0 16 16">
 <g style=""><path d="M1 8c0 3.84 3.16 7 7 7s7-3.16 7-7-3.16-7-7-7-7 3.16-7 7m15 0c0 4.389-3.611 8-8 8s-8-3.611-8-8 3.611-8 8-8 8 3.611 8 8m-4.5-.5c.274 0 .5.226.5.5s-.226.5-.5.5H5.707l2.147 2.146a.5.5 0 1 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5Z" style="fill-opacity:1"/></g>  </symbol>
   <symbol id="icon_arrowright" viewBox="0 0 16 16">
 <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" style="fill:currentColor" transform="matrix(.99982 0 0 1.14274 0 -1.141)"/>  </symbol>
