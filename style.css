@@ -1,0 +1,50 @@
+/* Colores de marca */
+:root {
+    --cd-primary: #e91e63;
+    --cd-hover-bg: #fff0f5;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* El Icono principal */
+.cd-icon {
+    width: 32px;
+    height: 32px;
+    fill: currentColor; /* Permite cambiar el color con 'color' */
+    transition: transform 0.2s ease;
+}
+
+/* La Tarjeta */
+.icon-card {
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-color: #eee !important;
+}
+
+.icon-card:hover {
+    border-color: var(--cd-primary) !important;
+    background-color: var(--cd-hover-bg);
+}
+
+.icon-card:hover .cd-icon {
+    transform: scale(1.2);
+    color: var(--cd-primary);
+}
+
+.icon-name {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* Ajuste para el buscador */
+#searchInput:focus {
+border-color: var(--cd-primary);
+box-shadow: 0 0 0 0.25rem rgba(233, 30, 99, 0.25);
+}
+
+header {
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
