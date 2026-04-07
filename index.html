@@ -61,20 +61,24 @@
         });
     }
 
-    // Copiar ID al portapapeles para usar con la etiqueta <i> en Blogger
+  // Función de copiado: Ahora copia el ID exacto del SVG
     function copyToClipboard(id) {
-        // Formateamos para que copies directamente la clase si quieres
-        const classFormat = `cd-${id.replace('icon-', '').replace('social-', '')}`;
-        navigator.clipboard.writeText(classFormat);
+        // Copia el ID tal cual está en la lista (ej: social-github)
+        navigator.clipboard.writeText(id);
         
-        // Feedback visual simple
+        // Feedback visual tipo Toast mejorado
         const toast = document.createElement('div');
-        toast.style = "position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#e91e63; color:white; padding:10px 20px; border-radius:20px; z-index:1000;";
-        toast.innerText = `Clase copiada: ${classFormat}`;
+        toast.style = "position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#e91e63; color:white; padding:10px 20px; border-radius:20px; z-index:1000; font-family: sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.1);";
+        toast.innerText = `ID copiado: ${id}`;
         document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 2000);
+        
+        // Desaparece después de 2 segundos
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => toast.remove(), 500);
+        }, 2000);
     }
-
     // Evento de búsqueda en tiempo real
     search.addEventListener('input', (e) => displayIcons(e.target.value));
 
