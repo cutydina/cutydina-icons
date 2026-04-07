@@ -1,14 +1,14 @@
 /* Cutydina Icons Library v1.0 
-   Uso: <i class="cd cd-nombre"></i>
+To use: <i class="cd cd-nombre"></i>
 */
 
-/* 1. CLASE BASE: Configura el comportamiento de "fuente de icono" */
+
 .cd {
     display: inline-block;
     width: 1em;
     height: 1em;
     vertical-align: middle;
-    background-color: currentColor; /* Permite cambiar color con 'color: red;' */
+    background-color: currentColor; 
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-size: contain;
@@ -16,7 +16,7 @@
     line-height: 1;
 }
 
-/* 2. ICONOS GENERALES */
+/* MY ICONS */
 .cd-arrowleft { -webkit-mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-arrowleft'); mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-arrowleft'); }
 .cd-buymeacofee { -webkit-mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-buymeacofee'); mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-buymeacofee'); }
 .cd-calendar { -webkit-mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-calendar'); mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-calendar'); }
@@ -27,7 +27,7 @@
 .cd-heartsmile { -webkit-mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-heartsmile'); mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-heartsmile'); }
 .cd-search { -webkit-mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-search'); mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#icon-search'); }
 
-/* 3. ICONOS DE REDES SOCIALES */
+/* MY SOCIAL NETWORK ICONS */
 .cd-amazon { -webkit-mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-amazon'); mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-amazon'); }
 .cd-bluesky { -webkit-mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-bluesky'); mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-bluesky'); }
 .cd-cara { -webkit-mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-cara'); mask-image: url('https://cutydina.github.io/cutydina-icons/sprites.svg#social-cara'); }
