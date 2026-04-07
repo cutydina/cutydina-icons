@@ -1,48 +1,65 @@
-/* Colores de marca */
+/* Colores de marca y variables globales */
 :root {
     --cd-primary: #e91e63;
     --cd-hover-bg: #fff0f5;
+    --bg-light: #f8f9fa;
 }
 
 body {
-    background-color: #ffffff;
+    background-color: var(--bg-light);
     color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* El Icono principal */
 .cd-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     fill: currentColor; /* Permite cambiar el color con 'color' */
-    transition: transform 0.2s ease;
+    color: #444;
+    transition: all 0.2s ease;
 }
 
 /* La Tarjeta */
 .icon-card {
     background: #fff;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border-color: #eee !important;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 12px;
 }
 
 .icon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
     border-color: var(--cd-primary) !important;
     background-color: var(--cd-hover-bg);
 }
 
 .icon-card:hover .cd-icon {
-    transform: scale(1.2);
+    transform: scale(1.1);
     color: var(--cd-primary);
 }
 
+/* Tipografía del nombre */
 .icon-name {
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.75rem;
+    color: #6c757d;
+    font-weight: 500;
 }
 
 /* Ajuste para el buscador */
-#searchInput:focus {
-border-color: var(--cd-primary);
-box-shadow: 0 0 0 0.25rem rgba(233, 30, 99, 0.25);
+#iconSearch {
+    border-radius: 30px;
+    padding-left: 20px;
+    border: 2px solid #eee;
+}
+
+#iconSearch:focus {
+    border-color: var(--cd-primary);
+    box-shadow: 0 0 0 0.25rem rgba(233, 30, 99, 0.15);
+    outline: none;
 }
 
 header {
