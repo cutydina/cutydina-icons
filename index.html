@@ -26,11 +26,18 @@
         </div>
 </div>
 
-<div style="padding: 1rem; font-size: 2rem;">
-    Test-icon:
-    <i class="cd cd-icon-search"></i>
-    <i class="cd cd-social-github"></i>
-    <i class="cd cd-icon-heart"></i>
+<div class="container pb-5">
+    <section class="mask-test-section p-4 rounded-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+                <h2 class="h4 mb-1">Test Icons CSS</h2>
+                <p class="text-muted mb-0">Vista de todos los iconos usando la sintaxis con i para detectar fallos.</p>
+            </div>
+        </div>
+
+        <div id="maskTestGrid" class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
+        </div>
+    </section>
 </div>
 
 <script>
@@ -46,7 +53,12 @@
     ];
 
     const grid = document.getElementById('iconGrid');
+    const maskTestGrid = document.getElementById('maskTestGrid');
     const search = document.getElementById('iconSearch');
+
+    function cssClassForId(id) {
+        return `cd-${id}`;
+    }
 
     // Función para renderizar los iconos en pantalla
     function displayIcons(filter = '') {
@@ -69,6 +81,24 @@
         });
     }
 
+    function displayMaskIcons(filter = '') {
+        maskTestGrid.innerHTML = '';
+
+        const filteredIcons = icons.filter(id => id.toLowerCase().includes(filter.toLowerCase()));
+
+        filteredIcons.forEach(id => {
+            const col = document.createElement('div');
+            col.className = 'col';
+            col.innerHTML = `
+                <div class="icon-card mask-test-card p-3 text-center h-100" onclick="copyToClipboard('${id}')">
+                    <i class="cd ${cssClassForId(id)} mask-test-icon mb-2"></i>
+                    <div class="icon-name text-truncate" title="${id}">${id}</div>
+                </div>
+            `;
+            maskTestGrid.appendChild(col);
+        });
+    }
+
   // Función de copiado: Ahora copia el ID exacto del SVG
     function copyToClipboard(id) {
         // Copia el ID tal cual está en la lista (ej: social-github)
@@ -88,10 +118,14 @@
         }, 2000);
     }
     // Evento de búsqueda en tiempo real
-    search.addEventListener('input', (e) => displayIcons(e.target.value));
+    search.addEventListener('input', (e) => {
+        displayIcons(e.target.value);
+        displayMaskIcons(e.target.value);
+    });
 
     // Carga inicial de la galería
     displayIcons();
+    displayMaskIcons();
 </script>
 
 <footer class="py-5 text-center text-muted">
