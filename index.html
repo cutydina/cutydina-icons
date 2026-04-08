@@ -36,7 +36,7 @@
 <script>
     // Lista de IDs sincronizada con tu sprites.svg
     const icons = [
-        'icon-arrowleft', 'icon-buymeacofee', 'icon-calendar', 'icon-copyright', 
+        'icon-arrowleft', 'icon-buymeacoffee', 'icon-calendar', 'icon-copyright', 
         'icon-danger', 'icon-gift', 'icon-heart', 'icon-heartsmile', 'icon-search',
         'social-amazon', 'social-bluesky', 'social-buymeacoffee', 'social-cara',
         'social-codepen', 'social-discord', 'social-email', 'social-github',
@@ -45,10 +45,6 @@
         'social-vgen', 'social-webtoon', 'social-youtube'
     ];
 
-    const iconAliases = {
-        'icon-buymeacofee': 'icon-buymeacoffee'
-    };
-
     const grid = document.getElementById('iconGrid');
     const search = document.getElementById('iconSearch');
 
@@ -56,23 +52,17 @@
     function displayIcons(filter = '') {
         grid.innerHTML = '';
         
-        const filteredIcons = icons.filter(id => {
-            const displayId = iconAliases[id] || id;
-            const query = filter.toLowerCase();
-
-            return id.toLowerCase().includes(query) || displayId.toLowerCase().includes(query);
-        });
+        const filteredIcons = icons.filter(id => id.toLowerCase().includes(filter.toLowerCase()));
 
         filteredIcons.forEach(id => {
-            const displayId = iconAliases[id] || id;
             const col = document.createElement('div');
             col.className = 'col';
             col.innerHTML = `
-                <div class="icon-card p-3 text-center h-100" onclick="copyToClipboard('${displayId}')">
+                <div class="icon-card p-3 text-center h-100" onclick="copyToClipboard('${id}')">
                     <svg class="cd-icon mb-2">
                         <use href="sprites.svg#${id}"></use>
                     </svg>
-                    <div class="icon-name text-truncate" title="${displayId}">${displayId}</div>
+                    <div class="icon-name text-truncate" title="${id}">${id}</div>
                 </div>
             `;
             grid.appendChild(col);
