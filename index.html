@@ -26,15 +26,7 @@
         </div>
 </div>
 
-<div style="padding: 1rem; font-size: 2rem;">
-    Test-icon:
-    <i class="cd cd-search"></i>
-    <i class="cd cd-github"></i>
-    <i class="cd cd-heart"></i>
-</div>
-
 <script>
-    // Lista de IDs sincronizada con tu sprites.svg
     const icons = [
         'icon-arrowleft', 'icon-buymeacofee', 'icon-calendar', 'icon-copyright', 
         'icon-danger', 'icon-gift', 'icon-heart', 'icon-heartsmile', 'icon-search',
@@ -48,7 +40,6 @@
     const grid = document.getElementById('iconGrid');
     const search = document.getElementById('iconSearch');
 
-    // Función para renderizar los iconos en pantalla
     function displayIcons(filter = '') {
         grid.innerHTML = '';
         
@@ -69,28 +60,23 @@
         });
     }
 
-  // Función de copiado: Ahora copia el ID exacto del SVG
     function copyToClipboard(id) {
-        // Copia el ID tal cual está en la lista (ej: social-github)
         navigator.clipboard.writeText(id);
         
-        // Feedback visual tipo Toast mejorado
         const toast = document.createElement('div');
         toast.style = "position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#e91e63; color:white; padding:10px 20px; border-radius:20px; z-index:1000; font-family: sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.1);";
         toast.innerText = `ID copiado: ${id}`;
         document.body.appendChild(toast);
         
-        // Desaparece después de 2 segundos
         setTimeout(() => {
             toast.style.opacity = '0';
             toast.style.transition = 'opacity 0.5s ease';
             setTimeout(() => toast.remove(), 500);
         }, 2000);
     }
-    // Evento de búsqueda en tiempo real
+
     search.addEventListener('input', (e) => displayIcons(e.target.value));
 
-    // Carga inicial de la galería
     displayIcons();
 </script>
 
