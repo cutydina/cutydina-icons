@@ -10,16 +10,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* El Icono principal */
 .cd-icon {
     width: 40px;
     height: 40px;
-    fill: currentColor; /* Permite cambiar el color con 'color' */
+    fill: currentColor; 
     color: #444;
     transition: all 0.2s ease;
 }
 
-/* La Tarjeta */
 .icon-card {
     background: #fff;
     cursor: pointer;
