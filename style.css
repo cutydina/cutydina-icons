@@ -1,5 +1,5 @@
 :root {
-    --cd-primary: #e91e63;
+    --cd-primary: #E80088;
     --cd-hover-bg: #fff0f5;
     --bg-light: #f8f9fa;
 }
@@ -7,7 +7,7 @@
 body {
     background-color: var(--bg-light);
     color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:"Sour Gummy", sans-serif; 
 }
 
 .cd-icon {
@@ -39,22 +39,9 @@ body {
 }
 
 .icon-name {
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     font-size: 0.75rem;
     color: #6c757d;
     font-weight: 500;
-}
-
-#iconSearch {
-    border-radius: 30px;
-    padding-left: 20px;
-    border: 2px solid #eee;
-}
-
-#iconSearch:focus {
-    border-color: var(--cd-primary);
-    box-shadow: 0 0 0 0.25rem rgba(233, 30, 99, 0.15);
-    outline: none;
 }
 
 header {
@@ -62,13 +49,10 @@ header {
 }
 
 .mask-test-section {
-    background: linear-gradient(to bottom, #ffffff, #fff8fb);
+    background: #ffffff;
     border: 1px solid #f1d7e3;
 }
 
-.mask-test-card {
-    min-height: 132px;
-}
 
 .mask-test-icon {
     width: 40px;
