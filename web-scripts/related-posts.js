@@ -36,21 +36,30 @@ function contains_thumbs(e, t) {
 }
 
 function printRelatedLabels_thumbs() {
-    for (var e = 0; e < relatedUrls.length; e++)(relatedUrls[e] == currentposturl || !relatedTitles[e]) && (relatedUrls.splice(e, 1), relatedTitles.splice(e, 1), thumburl.splice(e, 1), e--);
-    
+    for (var e = 0; e < relatedUrls.length; e++) {
+        (relatedUrls[e] == currentposturl || !relatedTitles[e]) && (relatedUrls.splice(e, 1), relatedTitles.splice(e, 1), thumburl.splice(e, 1), e--);
+    }
+
     if (relatedTitles.length > 0) {
         document.write("<h5>" + relatedpoststitle + "</h5>");
-        // Añadimos 'w-100' y aseguramos el row de Bootstrap
+        // Añadimos el row de Bootstrap
         document.write('<div class="row w-100 m-0" style="clear: both;">');
+        
         for (var t = Math.floor((relatedTitles.length - 1) * Math.random()), e = 0; e < relatedTitles.length && e < 20 && e < maxresults;) {
-            // Forzamos columnas que se adapten: 2 en móvil, 4 en desktop
             document.write('<div class="col-6 col-md-3 p-1">');
             document.write('<a style="text-decoration:none;" href="' + relatedUrls[t] + '">');
-            document.write('<img class="img-fluid related_img" src="' + thumburl[t] + '" style="width:100%; object-fit:cover; aspect-ratio:1/1;"/><br/>');
-            document.write('<div id="related-title" style="font-size:12px; line-height:1.2;">' + relatedTitles[t] + "</div></a></div>");
-            t < relatedTitles.length - 1 ? t++ : t = 0, e++
+            
+            // Inyectamos el estilo directamente en la imagen
+            document.write('<img class="img-fluid related_img" src="' + thumburl[t] + '" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.5em;"/><br/>');
+            
+            // Inyectamos el estilo directamente en el título
+            document.write('<div id="related-title" style="text-align: center; color: white; font-size: 12px; line-height: 1.2; margin-top: 5px;">' + relatedTitles[t] + "</div>");
+            
+            document.write('</a></div>');
+            
+            t < relatedTitles.length - 1 ? t++ : t = 0, e++;
         }
         document.write("</div>");
     }
-    relatedUrls.splice(0, relatedUrls.length), thumburl.splice(0, thumburl.length), relatedTitles.splice(0, relatedTitles.length)
+    relatedUrls.splice(0, relatedUrls.length), thumburl.splice(0, thumburl.length), relatedTitles.splice(0, relatedTitles.length);
 }
