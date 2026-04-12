@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".post-body a img").each(function(){/\.(?:jpg|jpeg|gif|png)$/i.test($(this).parent("a").attr("href"))&&($(this).parent("a").attr("data-src",$(this).parent("a").attr("href")),$(this).parent("a").attr("data-fancybox","postLightBox"))}),$("[data-fancybox]").fancybox({infobar:!0,buttons:!0,speed:300,margin:[40,20]})});
