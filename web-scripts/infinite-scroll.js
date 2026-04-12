@@ -1,1 +1,20 @@
-!function(e){function t(){n||(n=!0,a?(r.find("a").hide(),r.find("img").show(),e.ajax(a,{dataType:"html"}).done(function(t){var i,d=e("<div></div>").append(t.replace(l,"")),g=d.find("a.blog-pager-older-link"),p=d.find(o).children();e(o).append(p),window._gaq&&window._gaq.push(["_trackPageview",a]),window.gapi&&window.gapi.plusone&&window.gapi.plusone.go&&window.gapi.plusone.go(),window.disqus_shortname&&(i=window.disqus_shortname,e.getScript("http://"+i+".disqus.com/blogger_index.js")),window.FB&&window.FB.XFBML&&window.FB.XFBML.parse&&window.FB.XFBML.parse(),window.twttr&&window.twttr.widgets&&window.twttr.widgets.load&&window.twttr.widgets.load(),g?a=g.attr("href"):(a="",r.hide()),r.find("img").hide(),r.find("a").show(),n=!1})):r.hide())}function i(){Math.max(d.height(),g.height(),document.documentElement.clientHeight)-(d.scrollTop()+d.height())<150&&t()}var a="",r=null,o="div.blog-posts",n=!1,d=e(window),g=e(document),l=/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;e(document).ready(function o(){if("item"!=_WidgetManager._GetAllData().blog.pageType&&(a=e("a.blog-pager-older-link").attr("href"))){var n=e('<a href="javascript:;">Load more works</a>');n.click(t);var g=e('<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbfaII8U57fj_0DTofZf2G6T8c1By8cfllh_YHOnfxaIofb7IDwlApkvftxEQEh1OwfRu6g-ESDDfxb4n97_zWeLtBFtFC6dMLyaS3v1IpqPAyHlMImzaHE0PTUR8IzKEdsyrYbB6hYraiFJwfTx1DJxlxXpyNfcxKTzlSpBaDLZdvPy4n4vKG-kyPWLgr/s320/LoadMore.gif" style="display: none; max-width: 100px;">');d.scroll(i),(r=e('<div style="text-align: center"></div>')).append(n),r.append(g),r.insertBefore(e("#blog-pager")),e("#blog-pager").hide()}})}(jQuery);
+!function(e){
+    function t(){
+        n||(n=!0,a?(r.find("a").hide(),r.find("img").show(),e.ajax(a,{dataType:"html"}).done(function(t){
+            var i,d=e("<div></div>").append(t.replace(l,"")),g=d.find("a.blog-pager-older-link"),p=d.find(o).children();
+            e(o).append(p),window._gaq&&window._gaq.push(["_trackPageview",a]),window.gapi&&window.gapi.plusone&&window.gapi.plusone.go&&window.gapi.plusone.go(),window.disqus_shortname&&(i=window.disqus_shortname,e.getScript("http://"+i+".disqus.com/blogger_index.js")),window.FB&&window.FB.XFBML&&window.FB.XFBML.parse&&window.FB.XFBML.parse(),window.twttr&&window.twttr.widgets&&window.twttr.widgets.load&&window.twttr.widgets.load(),g?a=g.attr("href"):(a="",r.hide()),r.find("img").hide(),r.find("a").show(),n=!1
+        })):r.hide())
+    }
+    function i(){
+        Math.max(d.height(),g.height(),document.documentElement.clientHeight)-(d.scrollTop()+d.height())<150&&t()
+    }
+    var a="",r=null,o="div.blog-posts",n=!1,d=e(window),g=e(document),l=/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+    e(document).ready(function o(){
+        if(window._WidgetManager && "_GetAllData" in _WidgetManager && "item"!=_WidgetManager._GetAllData().blog.pageType && (a=e("a.blog-pager-older-link").attr("href"))){
+            var n=e('<a href="javascript:;" class="btn-load-more">Load more works</a>');
+            n.click(t);
+            var g=e('<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbfaII8U57fj_0DTofZf2G6T8c1By8cfllh_YHOnfxaIofb7IDwlApkvftxEQEh1OwfRu6g-ESDDfxb4n97_zWeLtBFtFC6dMLyaS3v1IpqPAyHlMImzaHE0PTUR8IzKEdsyrYbB6hYraiFJwfTx1DJxlxXpyNfcxKTzlSpBaDLZdvPy4n4vKG-kyPWLgr/s320/LoadMore.gif" style="display: none; max-width: 100px;">');
+            d.scroll(i),(r=e('<div style="text-align: center; width: 100%; clear: both;"></div>')).append(n),r.append(g),r.insertBefore(e("#blog-pager")),e("#blog-pager").hide()
+        }
+    })
+}(jQuery);
