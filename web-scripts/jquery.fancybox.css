@@ -67,10 +67,8 @@ min-width: 100vw;
   width: 70px;
   line-height: 44px;
   font-size: 13px;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   text-align: center;
   color: #ddd;
-  background-color: rgba(30, 30, 30, 0.7);
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -78,7 +76,9 @@ min-width: 100vw;
   user-select: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: subpixel-antialiased; }
+  -webkit-font-smoothing: subpixel-antialiased; 
+  margin: 0.2em;
+}
 
 .fancybox-buttons {
   position: absolute;
@@ -348,7 +348,7 @@ min-width: 100vw;
   width: 44px;
   height: 44px;
   line-height: 44px;
-  margin: 0;
+  margin: 0.2em;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -357,6 +357,7 @@ min-width: 100vw;
   box-sizing: border-box;
   vertical-align: top;
   outline: none; }
+
 
 .fancybox-button--disabled {
   cursor: default;
