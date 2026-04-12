@@ -46,6 +46,9 @@
     const search = document.getElementById('iconSearch');
 
     function cssClassForId(id) {
+        if (id.endsWith('animation') || id === 'heart-enter') {
+            return id;
+        }
         return `cd-${id}`;
     }
 
