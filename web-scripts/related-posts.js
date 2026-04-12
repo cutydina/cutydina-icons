@@ -36,36 +36,21 @@ function contains_thumbs(e, t) {
 }
 
 function printRelatedLabels_thumbs() {
-    var tempRelatedTitles = [];
-    var tempRelatedUrls = [];
-    var tempThumburl = [];
-
-    for (var e = 0; e < relatedUrls.length; e++) {
-        if (relatedUrls[e] != currentposturl && relatedTitles[e]) {
-            tempRelatedUrls.push(relatedUrls[e]);
-            tempRelatedTitles.push(relatedTitles[e]);
-            tempThumburl.push(thumburl[e]);
+    for (var e = 0; e < relatedUrls.length; e++)(relatedUrls[e] == currentposturl || !relatedTitles[e]) && (relatedUrls.splice(e, 1), relatedTitles.splice(e, 1), thumburl.splice(e, 1), e--);
+    
+    if (relatedTitles.length > 0) {
+        document.write("<h5>" + relatedpoststitle + "</h5>");
+        // Añadimos 'w-100' y aseguramos el row de Bootstrap
+        document.write('<div class="row w-100 m-0" style="clear: both;">');
+        for (var t = Math.floor((relatedTitles.length - 1) * Math.random()), e = 0; e < relatedTitles.length && e < 20 && e < maxresults;) {
+            // Forzamos columnas que se adapten: 2 en móvil, 4 en desktop
+            document.write('<div class="col-6 col-md-3 p-1">');
+            document.write('<a style="text-decoration:none;" href="' + relatedUrls[t] + '">');
+            document.write('<img class="img-fluid related_img" src="' + thumburl[t] + '" style="width:100%; object-fit:cover; aspect-ratio:1/1;"/><br/>');
+            document.write('<div id="related-title" style="font-size:12px; line-height:1.2;">' + relatedTitles[t] + "</div></a></div>");
+            t < relatedTitles.length - 1 ? t++ : t = 0, e++
         }
+        document.write("</div>");
     }
-
-    if (tempRelatedTitles.length > 0) {
-        var html = '<h5>' + relatedpoststitle + '</h5>';
-        html += '<div class="row w-100 m-0" style="clear: both; display: flex; flex-wrap: wrap;">';
-        
-        var r = Math.floor((tempRelatedTitles.length - 1) * Math.random());
-        var count = 0;
-
-        while (count < tempRelatedTitles.length && count < maxresults) {
-            html += '<div class="col-6 col-md-3 p-1" style="box-sizing: border-box;">';
-            html += '<a style="text-decoration:none; display: block;" href="' + tempRelatedUrls[r] + '">';
-            html += '<img class="img-fluid" src="' + tempThumburl[r] + '" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.5em; display: block;"/>';
-            html += '<div style="text-align: center; color: white; font-size: 12px; line-height: 1.2; margin-top: 5px; word-wrap: break-word;">' + tempRelatedTitles[r] + '</div>';
-            html += '</a></div>';
-            
-            if (r < tempRelatedTitles.length - 1) r++; else r = 0;
-            count++;
-        }
-        html += '</div>';
-        document.write(html);
-    }
+    relatedUrls.splice(0, relatedUrls.length), thumburl.splice(0, thumburl.length), relatedTitles.splice(0, relatedTitles.length)
 }
