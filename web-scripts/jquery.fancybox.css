@@ -1,6 +1,5 @@
 @charset "UTF-8";
-.fancybox-enabled {
-  overflow: hidden; }
+.fancybox-enabled {overflow: hidden; }
 
 .fancybox-enabled body {
   overflow: visible;
@@ -21,6 +20,7 @@
   z-index: 99992; }
 
 .fancybox-bg {
+  min-width: 100vw;
   position: absolute;
   top: 0;
   right: 0;
@@ -31,6 +31,8 @@
   transition-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
+
+min-width: 100vw;
 
 .fancybox-container--ready .fancybox-bg {
   opacity: 0.87;
