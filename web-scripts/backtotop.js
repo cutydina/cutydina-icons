@@ -1,0 +1,1 @@
+let mybutton=document.getElementById("btn_backtotop");function scrollFunction(){document.body.scrollTop>20||document.documentElement.scrollTop>20?mybutton.style.display="block":mybutton.style.display="none"}function backToTop(){document.body.scrollTop=0,document.documentElement.scrollTop=0}window.onscroll=function(){scrollFunction()},mybutton.addEventListener("click",backToTop);
