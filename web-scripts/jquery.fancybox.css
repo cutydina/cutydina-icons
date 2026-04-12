@@ -356,15 +356,18 @@ min-width: 100vw;
   color: #fff;
   box-sizing: border-box;
   vertical-align: top;
-  outline: none; }
+  outline: none;
+  border-radius: 100%}
+}
 
 
 .fancybox-button--disabled {
   cursor: default;
   pointer-events: none; }
 
-.fancybox-infobar__body, .fancybox-button {
-  background: rgba(30, 30, 30, 0.6); }
+.fancybox-infobar__body, .fancybox-button {background: rgba(30, 30, 30, 0.6); }
+
+.fancybox-infobar__body span{color:#fff}
 
 .fancybox-button:hover {
   background: rgba(0, 0, 0, 0.8); }
