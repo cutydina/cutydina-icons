@@ -36,30 +36,36 @@ function contains_thumbs(e, t) {
 }
 
 function printRelatedLabels_thumbs() {
+    var tempRelatedTitles = [];
+    var tempRelatedUrls = [];
+    var tempThumburl = [];
+
     for (var e = 0; e < relatedUrls.length; e++) {
-        (relatedUrls[e] == currentposturl || !relatedTitles[e]) && (relatedUrls.splice(e, 1), relatedTitles.splice(e, 1), thumburl.splice(e, 1), e--);
+        if (relatedUrls[e] != currentposturl && relatedTitles[e]) {
+            tempRelatedUrls.push(relatedUrls[e]);
+            tempRelatedTitles.push(relatedTitles[e]);
+            tempThumburl.push(thumburl[e]);
+        }
     }
 
-    if (relatedTitles.length > 0) {
-        document.write("<h5>" + relatedpoststitle + "</h5>");
-        // Añadimos el row de Bootstrap
-        document.write('<div class="row w-100 m-0" style="clear: both;">');
+    if (tempRelatedTitles.length > 0) {
+        var html = '<h5>' + relatedpoststitle + '</h5>';
+        html += '<div class="row w-100 m-0" style="clear: both; display: flex; flex-wrap: wrap;">';
         
-        for (var t = Math.floor((relatedTitles.length - 1) * Math.random()), e = 0; e < relatedTitles.length && e < 20 && e < maxresults;) {
-            document.write('<div class="col-6 col-md-3 p-1">');
-            document.write('<a style="text-decoration:none;" href="' + relatedUrls[t] + '">');
+        var r = Math.floor((tempRelatedTitles.length - 1) * Math.random());
+        var count = 0;
+
+        while (count < tempRelatedTitles.length && count < maxresults) {
+            html += '<div class="col-6 col-md-3 p-1" style="box-sizing: border-box;">';
+            html += '<a style="text-decoration:none; display: block;" href="' + tempRelatedUrls[r] + '">';
+            html += '<img class="img-fluid" src="' + tempThumburl[r] + '" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.5em; display: block;"/>';
+            html += '<div style="text-align: center; color: white; font-size: 12px; line-height: 1.2; margin-top: 5px; word-wrap: break-word;">' + tempRelatedTitles[r] + '</div>';
+            html += '</a></div>';
             
-            // Inyectamos el estilo directamente en la imagen
-            document.write('<img class="img-fluid related_img" src="' + thumburl[t] + '" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0.5em;"/><br/>');
-            
-            // Inyectamos el estilo directamente en el título
-            document.write('<div id="related-title" style="text-align: center; color: white; font-size: 12px; line-height: 1.2; margin-top: 5px;">' + relatedTitles[t] + "</div>");
-            
-            document.write('</a></div>');
-            
-            t < relatedTitles.length - 1 ? t++ : t = 0, e++;
+            if (r < tempRelatedTitles.length - 1) r++; else r = 0;
+            count++;
         }
-        document.write("</div>");
+        html += '</div>';
+        document.write(html);
     }
-    relatedUrls.splice(0, relatedUrls.length), thumburl.splice(0, thumburl.length), relatedTitles.splice(0, relatedTitles.length);
 }
